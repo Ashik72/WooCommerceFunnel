@@ -1,0 +1,51 @@
+<?php get_header(); ?>
+
+  <?php
+
+  echo "Main Template"."<br><br>";
+
+  $get_meta = get_post_meta($product_id, 'funnely_io_meta', true);
+
+  if (empty($get_meta))
+    die();
+
+  foreach ($get_meta as $key => $meta) {
+
+    if (!empty($meta->isParent)) {
+
+      echo "This product ID - " . $product_id . "<br>";
+
+      $the_product = new WC_Product($product_id);
+
+      echo "This product title - " . $the_product->post->post_title . "<br>"."<br>";
+
+      if (!empty($meta->down)) {
+
+        echo "This product down level ID - <a href='/funnely/?product_id=".$meta->up->targetID."&type=down'>" . $meta->down->targetID . "</a><br>";
+
+        $the_product = new WC_Product($meta->down->targetID);
+
+        echo "This product down level title - " . $the_product->post->post_title . "<br>"."<br>";
+
+
+      }
+
+      if (!empty($meta->up)) {
+
+        echo "This product up level ID - <a href='/funnely/?product_id=".$meta->up->targetID."&type=up'>" . $meta->up->targetID . "</a><br>";
+
+        $the_product = new WC_Product($meta->up->targetID);
+
+        echo "This product up level title - " . $the_product->post->post_title . "<br>"."<br>";
+
+
+      }
+
+    }
+
+  }
+
+
+   ?>
+
+<?php get_footer(); ?>

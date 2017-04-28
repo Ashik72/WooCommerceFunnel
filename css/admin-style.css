@@ -1,0 +1,23 @@
+.woocommerce-funnel-integration_page_woocommerce-funnel-integration-funnel-design table.form-table .first {
+  padding: 0 !important;
+  width: 0 !important;
+}
+
+
+.woocommerce-funnel-integration_page_woocommerce-funnel-integration-funnel-design .row-1 .second {
+  /*width: 80%;*/
+}
+
+.woocommerce-funnel-integration_page_woocommerce-funnel-integration-funnel-design .row-1 .first {
+  text-align: center;
+}
+
+.row-1.odd .first {
+	width: 30% !important;
+}
+
+
+.funnel_name_input_class {
+	width: 100%;
+	padding: 1rem;
+}

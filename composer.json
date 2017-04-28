@@ -1,0 +1,7 @@
+{
+    "require": {
+        "mashape/unirest-php": "^3.0",
+        "stripe/stripe-php": "^4.4",
+        "paypal/rest-api-sdk-php": "*"
+    }
+}
